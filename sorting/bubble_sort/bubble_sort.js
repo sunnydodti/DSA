@@ -10,13 +10,18 @@ function bubble_sort(elements) {
 }
 
 function bubble_sort_optimized(elements) {
+    var i, j;
+    var swapped;
     const length = elements.length;
-    for (let i = 0; i < length - 1; i++) {
-        for (let j = 0; j < length - 1 - i; j++) {
+
+    for (i = 0; i < length - 1; i++) {
+        for (j = 0; j < length - 1 - i; j++) {
             if (elements[j] > elements[j + 1]) {
                 [elements[j], elements[j + 1]] = [elements[j + 1], elements[j]];
+                swapped = true;
             }
         }
+        if (swapped == false) break;
     }
     return elements;
 }

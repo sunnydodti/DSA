@@ -10,30 +10,43 @@ public class BubbleSort {
     }
 
     static int[] bubbleSort(int[] elements) {
-        for (int i = 0; i < elements.length; i++) {
-            for (int j = 0; j < elements.length - 1; j++) {
+        int i, j, temp;
+        boolean swapped;
+
+        for (i = 0; i < elements.length; i++) {
+            swapped = false;
+            for (j = 0; j < elements.length - 1; j++) {
                 if (elements[j] > elements[j + 1]) {
-                    int temp = elements[j];
+                    temp = elements[j];
                     elements[j] = elements[j + 1];
                     elements[j + 1] = temp;
+                    swapped = true;
                 }
             }
+
+            if (!swapped)
+                break;
         }
         return elements;
     }
 
     static int[] bubbleSortOptimized(int[] elements) {
-        int length = elements.length;
-        for (int i = 0; i < length - 1; i++) {
-            for (int j = 0; j < length - 1 - i; j++) {
+        int i, j, temp;
+        boolean swapped;
+        final int length = elements.length;
+        for (i = 0; i < length - 1; i++) {
+            swapped = false;
+            for (j = 0; j < length - 1 - i; j++) {
 
                 if (elements[j] > elements[j + 1]) {
-                    int temp = elements[j];
+                    temp = elements[j];
                     elements[j] = elements[j + 1];
                     elements[j + 1] = temp;
                 }
-
             }
+
+            if (!swapped)
+                break;
         }
         return elements;
     }
