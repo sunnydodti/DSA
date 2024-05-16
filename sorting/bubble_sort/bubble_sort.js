@@ -28,5 +28,5 @@ function bubble_sort_optimized(elements) {
 
 const input = [3, 7, 2, 9, 0, 6]
 
-console.log(`bubble_sort: ${bubble_sort(input)}`);
-console.log(`bubble_sort_optimized: ${bubble_sort(input)}`);
+console.log(`bubble_sort: ${bubble_sort(input.slice())}`);
+console.log(`bubble_sort_optimized: ${bubble_sort(input.slice())}`);

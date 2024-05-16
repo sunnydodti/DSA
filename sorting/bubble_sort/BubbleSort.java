@@ -5,27 +5,21 @@ public class BubbleSort {
         int[] input = { 1, 3, 5, 0, 8, 4, 2 };
         print(input);
         print(bubbleSort(input.clone()), "bubbleSort");
-        print(bubbleSort(input.clone()), "bubbleSortOptimized");
+        print(bubbleSortOptimized(input.clone()), "bubbleSortOptimized");
 
     }
 
     static int[] bubbleSort(int[] elements) {
         int i, j, temp;
-        boolean swapped;
 
         for (i = 0; i < elements.length; i++) {
-            swapped = false;
             for (j = 0; j < elements.length - 1; j++) {
                 if (elements[j] > elements[j + 1]) {
                     temp = elements[j];
                     elements[j] = elements[j + 1];
                     elements[j + 1] = temp;
-                    swapped = true;
                 }
             }
-
-            if (!swapped)
-                break;
         }
         return elements;
     }
@@ -42,6 +36,7 @@ public class BubbleSort {
                     temp = elements[j];
                     elements[j] = elements[j + 1];
                     elements[j + 1] = temp;
+                    swapped = true;
                 }
             }
 
