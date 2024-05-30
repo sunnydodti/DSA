@@ -2,7 +2,7 @@ def binary_search_iterative(elements: list[int], key: int) -> int:
     if not elements:
         return -1
     left: int = 0
-    right: int = len(elements)
+    right: int = len(elements) - 1
 
     while left <= right:
         mid: int = left + (right - left) // 2
@@ -33,5 +33,9 @@ if __name__ == '__main__':
     print(f"{binary_search_iterative(input, key) = }")
 
     key: int = 8
+    print(f"{key = }")
+    print(f"{binary_search_iterative(input, key) = }")
+    
+    key: int = 80
     print(f"{key = }")
     print(f"{binary_search_iterative(input, key) = }")

@@ -13,13 +13,16 @@ void main(List<String> args) {
   key = 5;
   print("key: $key");
   print("binarySearch: ${binarySearch(input, key)}");
+  key = 50;
+  print("key: $key");
+  print("binarySearch: ${binarySearch(input, key)}");
 }
 
 int binarySearch(List<int> elements, int key) {
   if (elements.isEmpty) return -1;
 
   int left = 0;
-  int right = elements.length;
+  int right = elements.length - 1;
 
   while (left <= right) {
     int mid = (left + (right - left) / 2).floor();
