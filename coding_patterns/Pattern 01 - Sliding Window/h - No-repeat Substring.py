@@ -25,6 +25,25 @@ def lengthOfLongestSubstring(s: str):
 
     return length
 
+def lengthOfLongestSubstringImproved(s: str):
+    start: int = 0
+    length: int = 0
+    map: dict[str, int] = {}
+
+    print(s)
+    for i in range(len(s)):
+        print(f"i:{i}:{s[i]}")
+        if s[i] in map:
+            length = max(length, i - start + 1)
+            
+        map[s[i]] = i
+        print(
+            f"length: {length} or i({i})-start({start})+1 : {i - start + 1} = {max(length, i - start + 1)}")
+        length = max(length, i - start + 1)
+        print(f"{map=} {length=}")
+
+    return length
+
 
 if __name__ == '__main__':
     print(lengthOfLongestSubstring('zara'))
